@@ -9,28 +9,27 @@ var Stack = function() {
   // but try not not reference your old code in writing the new style.
   var storage = {};
   storage.position =0;
-  _.extend(storage, Stack.stackMethods);
+  _.extend(storage, stackMethods);
   return storage;
 };
 
 
 
-Stack.stackMethods = {};
+var stackMethods = {};
 
-Stack.stackMethods.push = function(value){
-  console.log(this);
+stackMethods.push = function(value){
   this[this.position] = value;
   this.position++;
 };
 
-Stack.stackMethods.pop = function(){
+stackMethods.pop = function(){
   this.position && this.position--;
   var result = this[this.position];
   delete this[this.position];
   return result;
 };
 
-Stack.stackMethods.size = function(){
+stackMethods.size = function(){
   return this.position;
 };
 
