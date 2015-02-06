@@ -17,9 +17,9 @@ var Tree = function(value){
 var treeMethods = {};
 
 treeMethods.addChild = function(input){
-  var childObject = {};
+  var childObject = {value: null};
   this.children[this.children.length] = childObject;
-  childObject[value] = input;
+  childObject["value"] = input;
   console.log(this.children);
 
 };
