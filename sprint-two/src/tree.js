@@ -19,12 +19,17 @@ var treeMethods = {};
 treeMethods.addChild = function(input){
   var childObject = {value: null};
   this.children[this.children.length] = childObject;
-  childObject["value"] = input;
-  console.log(this.children);
-
+  childObject['value'] = input;
 };
 
 treeMethods.contains = function(target){
+  var result = false;
+  for (var i = 0; i<this.children.length; i++){
+    if (this.children[i]['value'] ===target){
+      result = true;
+    }
+  }
+  return result;
 
 };
 
