@@ -15,7 +15,7 @@ var treeMethods = {};
 treeMethods.addChild = function(input){
   var childObject = new Tree(input);
   this.children[this.children.length] = childObject;
-  childObject['value'] = input;
+  // childObject['value'] = input;
 
 };
 
@@ -35,12 +35,9 @@ treeMethods.contains = function(target, current, result){
 
   if(current.children.length>0){
     for (var i = 0; i<current.children.length; i++){
-      console.log(current.children[i]);
       result = this.contains(target, current.children[i], result);
-      console.log(result);
     }
   }
-
   return result;
 };
 
