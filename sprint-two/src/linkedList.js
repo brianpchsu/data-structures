@@ -6,7 +6,7 @@ var LinkedList = function(){
 
   list.addToTail = function(value){
 
-    var newNode = Node(value);
+    var newNode = Treenode(value);
 
     //Empty condition
     if (list.head === null) {
@@ -31,7 +31,8 @@ var LinkedList = function(){
     var result = false;
     var current = list.head;
     while (current !==null) {
-      if (current.value === target) {
+      console.log(current);
+      if (current["value"] === target) {
         result = true;
       }
       current = current.next;
@@ -43,7 +44,7 @@ var LinkedList = function(){
   return list;
 };
 
-var Node = function(value){
+var Treenode = function(value){
   var node = {};
 
   node.value = value;
@@ -51,7 +52,3 @@ var Node = function(value){
 
   return node;
 };
-
-/*
- * Complexity: What is the time complexity of the above functions?
- */

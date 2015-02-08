@@ -47,10 +47,11 @@ var BinarySearchTree = function(value){
     return _.contains(tree.storage, value);
   };
 
-  tree.depthFirstLog = function(){
-
+  tree.depthFirstLog = function(func){
+    _.each(tree.storage, function(elem){
+      func(elem);
+    });
   };
-
   return tree;
 };
 
